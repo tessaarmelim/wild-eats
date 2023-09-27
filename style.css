@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+.restaurants {
+  background-color: blue;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.filters-cards {
+  display:flex;
+  background-color: red;
+}
+
+.filter {
+  padding: 1rem;
+  background-color: chartreuse;
+}
+
+.restaurants-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: blueviolet;
+}
+
+.restaurant-img {
+  background-size: cover;
+  background-position: center;
+  height: 10rem;
+  width: 10rem;
+}
+
+footer {
+  background-color: black;
+}

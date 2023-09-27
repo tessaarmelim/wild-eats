@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+
+.footer {
+  background-color: rgba(106, 101, 101, 1);
+  height: 15rem;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.wild-eats-logo {
+  color: rgba(189, 208, 157, 1);
+  border: solid 1px white;
+  width: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+}
+
+
+

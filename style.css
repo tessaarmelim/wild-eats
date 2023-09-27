@@ -4,9 +4,6 @@
   list-style: none;
   text-decoration: none;
 }
-
-
-
 .footer {
   background-color: rgba(106, 101, 101, 1);
   height: 15rem;
@@ -15,6 +12,8 @@
   width: 100vw;
 }
 
+/* logo wild eats vert*/
+    
 .wild-eats-logo {
   color: rgba(189, 208, 157, 1);
   border: solid 1px white;
@@ -22,6 +21,21 @@
   text-align: center;
   margin-top: 2rem;
   margin-left: 0.5rem;
+}
+
+/* logo */
+
+.logo-reseau {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.download {
+  margin-left: 0.5rem;
+  margin-top: 1rem;
 }
 
 

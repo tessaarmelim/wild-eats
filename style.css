@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+nav {
+  background: #BDD09D;
+  height: 100px;
+}
+
+h1 {
+  padding-left: 12px;
+  padding-right: 474px;
+  padding-top: 22px;
+  padding-bottom: 24px;
+  width: 44px;
+  height: 20px;
+  flex-shrink: 0;
+  font-style: normal;
+  font-family:Impact, fantasy;
+}
+
+h2 {
+  text-align: center;
+ 
+}
+
+form {
+  background: #BDD09D;
+  height: 143px;
+  text-align: end;
+}
+
+li {
+  padding: 5px;
+}
+h2,li {
+  font-family: 'Krona One', sans-serif;
+}
+
+img {
+  display: inline;
+  opacity: 0.8;
+  background: #FFFDFD;
+}
+
+

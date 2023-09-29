@@ -4,39 +4,41 @@
   list-style: none;
   text-decoration: none;
 }
-.footer {
+
+footer {
   background-color: rgba(106, 101, 101, 1);
-  height: 15rem;
+  height: 10rem;
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
 }
 
-/* logo wild eats vert*/
-    
-.wild-eats-logo {
-  color: rgba(189, 208, 157, 1);
-  border: solid 1px white;
-  width: 3rem;
-  text-align: center;
-  margin-top: 2rem;
-  margin-left: 0.5rem;
-}
-
-/* logo */
-
-.logo-reseau {
+.container {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  padding: 1rem;
+  margin-top: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.appstore, .googleplay {
+  width: 80px;
+  height: 45px;
+  margin-left: 0.2rem;
 }
 
 .download {
-  margin-left: 0.5rem;
-  margin-top: 1rem;
+  color:  white;
+  font-size: 20px;
+  text-align: center;
+
 }
 
-
-
+.wild-eats {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  border: solid 2px white ;
+  width: 3rem;
+  text-align: center;
+  color: rgba(142, 175, 87, 0.58);
+  
+}

@@ -31,7 +31,7 @@ h2 {
   background-color: red;
 }
 
-.filter {
+.filter-button {
   padding: 1rem;
   border: solid;
   border-radius: .5rem;
@@ -47,7 +47,7 @@ h2 {
   margin-top: 1rem;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   background-color: blueviolet;
   border: solid;
@@ -73,6 +73,6 @@ h2 {
   color:black;
 }
 
-.restaurant-card-description {
+.restaurant-card-food-category {
   color: black;
 }

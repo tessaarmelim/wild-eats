@@ -8,13 +8,13 @@ const allRestaurants = [
   {
     name: "Restaurant1",
     picture: "https://placekitten.com/200/287",
-    foodCategory: "Coréen",
+    foodCategory: "Italien",
     favory: false
   },
   {
     name: "Restaurant2",
     picture: "https://placekitten.com/200/145",
-    foodCategory: "Chinois",
+    foodCategory: "Libanais",
     favory: false
   },
   {
@@ -44,54 +44,87 @@ const allRestaurants = [
   {
     name: "Restaurant7",
     picture: "https://placekitten.com/200/190",
-    foodCategory: "Anglais",
+    foodCategory: "Japonnais",
     favory: false
   },
   {
     name: "Restaurant8",
     picture: "https://placekitten.com/200/165",
-    foodCategory: "Americain",
+    foodCategory: "Francais",
     favory: false
   },
   {
     name: "Restaurant9",
     picture: "https://placekitten.com/200/122",
-    foodCategory: "Espagnol",
+    foodCategory: "Italien",
     favory: false
   }
 ];
 
 const restaurantsCards = document.querySelector(".restaurants-cards");
 
-const createRestaurantCard = (name, imageUrl, food) => {
+const createRestaurantCard = (data) => {
   const restaurantCard = document.createElement("div");
   restaurantCard.classList.add("restaurant-card");
   restaurantsCards.appendChild(restaurantCard);
   
   const restaurantCardImg = document.createElement("div");
-  restaurantCardImg.style.backgroundImage = `url(${imageUrl})`;
+  restaurantCardImg.style.backgroundImage = `url(${data.picture})`;
   restaurantCardImg.classList.add("restaurant-card-img");
   restaurantCard.appendChild(restaurantCardImg);
 
   const restaurantCardTitle = document.createElement("div");
   restaurantCardTitle.classList.add("restaurant-card-title");
-  restaurantCardTitle.innerHTML = name;
+  restaurantCardTitle.innerHTML = data.name;
   restaurantCard.appendChild(restaurantCardTitle);
 
-  const restaurantCardDescription = document.createElement("div");
-  restaurantCardDescription.classList.add("estaurant-card-description");
-  restaurantCardDescription.innerHTML = food;
-  restaurantCard.appendChild(restaurantCardDescription);
+  const restaurantCardFoodCategory = document.createElement("div");
+  restaurantCardFoodCategory.classList.add("restaurant-card-food-category");
+  restaurantCardFoodCategory.innerHTML = data.foodCategory;
+  restaurantCard.appendChild(restaurantCardFoodCategory);
 }
 
-for (let i = 0; i < allRestaurants.length; i++) {
-  createRestaurantCard(allRestaurants[i].name, allRestaurants[i].picture, allRestaurants[i].foodCategory);
+const addRestaurantCard = (filteredRestaurants) => {
+  restaurantsCards.innerHTML = ``;
+  for (let i = 0; i < filteredRestaurants.length; i++) {
+    createRestaurantCard(filteredRestaurants[i]);
+  }
+  restaurantCards = document.querySelectorAll(".restaurant-card");
 }
 
-const filter = document.querySelectorAll(".filter");
-console.log(filter);
-for(let i = 0; i < filter.length; i++){
-  filter[i].addEventListener("click", function () {
-    filter[i].classList.toggle("yellow-background");
-  });
+let restaurantCards = [];
+
+const filterButtons = document.querySelectorAll(".filter-button");
+
+let selection = [];
+
+const filterRestaurant = () => {
+  const filteredRestaurants = [];
+  for (let i = 0; i < allRestaurants.length; i++) {
+    if(selection.length === 0 || selection.includes(allRestaurants[i].foodCategory)) {
+      filteredRestaurants.push(allRestaurants[i]);
+    }
+  }
+  addRestaurantCard(filteredRestaurants);
 }
+
+const filter = () => {
+  for (let i = 0; i < filterButtons.length; i++) {
+    filterButtons[i].addEventListener("click", function () {
+      if (selection.includes(filterButtons[i].textContent)) { //si le filtre est cliqué on le retire
+        const index = selection.indexOf(filterButtons[i].textContent);
+        if (index !== -1) {
+          selection.splice(index, 1);
+        }
+      } else { //si il n'y est pas on l'ajoute
+        selection.push(filterButtons[i].textContent);
+      }
+      filterButtons[i].classList.toggle("yellow-background");
+      filterRestaurant();
+      console.log(selection);
+    });
+    filterRestaurant();
+  }
+}
+
+filter();

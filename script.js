@@ -69,7 +69,8 @@ const createRestaurantCard = (data) => {
   restaurantsCards.appendChild(restaurantCard);
   
   const restaurantCardImg = document.createElement("div");
-  restaurantCardImg.style.backgroundImage = `url(${data.picture})`;
+  // restaurantCardImg.style.backgroundImage = `url(${data.picture})`;
+  restaurantCardImg.style.backgroundColor = "rgba(142, 175, 87, 0.58)"
   restaurantCardImg.classList.add("restaurant-card-img");
   restaurantCard.appendChild(restaurantCardImg);
 

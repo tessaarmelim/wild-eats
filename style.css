@@ -3,19 +3,24 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-}
+  box-sizing: border-box;
+ 
+} 
 
 footer {
   background-color: rgba(106, 101, 101, 1);
-  height: 10rem;
-  position: fixed;
-  bottom: 0;
   width: 100%;
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
 }
 
 .container {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   justify-content: space-around;
   align-items: center;
 }
@@ -37,20 +42,21 @@ footer {
   margin-left: 1.5rem;
   border: solid 2px white ;
   width: 3rem;
-  text-align: center;
+ 
   color: rgba(142, 175, 87, 0.58);
 }
 .restaurants {
-  width: 100vw;
+  
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: blue;
+  background-color:;
+  margin-top: 400px;
 }
 
-h2 {
+h2, .restaurants {
   font-size: 2rem;
-  width: 100vw;
+
 }
 
 .filters-cards {
@@ -67,6 +73,7 @@ h2 {
 }
 
 .yellow-background {
+  background-color: yellow;
 }
 
 .restaurants-cards {
@@ -76,7 +83,7 @@ h2 {
   justify-items: center;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
-  border: solid;
+  
 }
 
 .restaurant-card {
@@ -103,7 +110,7 @@ h2 {
   color: black;
 }
 
-nav {
+.navbar {
   background: #BDD09D;
   height: 100px;
 }
@@ -120,11 +127,12 @@ h1 {
   font-family:Impact, fantasy;
 }
 
-h2,nav {
+h2, .navbar {
   text-align: center;
+
 }
 
-form {
+.menu {
   background: #c4d7a2;
   height: 143px;
   text-align: end;
@@ -142,3 +150,34 @@ img {
   width: 100%;
   height: 250px;
 }
+
+body {
+
+}
+
+h2 {
+  text-align: left;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.about p {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.about {
+  margin-top: 1rem;
+}
+
+.faq p {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.faq {
+  margin-top: 1rem;
+}
+

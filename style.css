@@ -3,9 +3,43 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  box-sizing: border-box;
 }
 
+footer {
+  background-color: rgba(106, 101, 101, 1);
+  height: 10rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.appstore, .googleplay {
+  width: 80px;
+  height: 45px;
+  margin-left: 0.2rem;
+}
+
+.download {
+  color:  white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.wild-eats {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  border: solid 2px white ;
+  width: 3rem;
+  text-align: center;
+  color: rgba(142, 175, 87, 0.58);
+}
 .restaurants {
   width: 100vw;
   display: flex;

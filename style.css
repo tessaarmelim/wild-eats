@@ -1,3 +1,7 @@
+:root {
+  --main-color: #BDD09D;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -42,15 +46,13 @@ footer {
   margin-left: 1.5rem;
   border: solid 2px white ;
   width: 3rem;
- 
-  color: rgba(142, 175, 87, 0.58);
+  color: var(--main-color);
 }
+
 .restaurants {
-  
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 400px;
 }
 
 h2, .restaurants {
@@ -126,7 +128,7 @@ h2, .restaurants {
 }
 
 .navbar {
-  background: #BDD09D;
+  background: var(--main-color);
   height: 100px;
 }
 
@@ -148,7 +150,7 @@ h2, .navbar {
 }
 
 .menu {
-  background: #c4d7a2;
+  background: var(--main-color);
   height: 143px;
   text-align: end;
 }
@@ -158,7 +160,7 @@ li {
 }
 
 img {
-  display: inline;
+  display: block;
   opacity: 0.8;
   background: #FFFDFD;
   text-align: center;

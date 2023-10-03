@@ -144,6 +144,8 @@ const filterRestaurant = () => {
   addStarClicker();
 }
 
+const favorites = [];
+
 const addStarClicker = () => {
   const stars = document.querySelectorAll(".star svg");
   for (let i = 0; i < stars.length; i++) {
@@ -156,9 +158,15 @@ const addStarClicker = () => {
       if (stars[i].starPath.getAttribute("d") === starRegular) {
         stars[i].starIcon.starPath.setAttribute("d", starSolid);
         restaurant.favory = true;
+        favorites.push(restaurant);
+        console.log(favorites);
       } else {
         stars[i].starIcon.starPath.setAttribute("d", starRegular);
         restaurant.favory = false;
+        const toUnfav = favorites.find(restaurant => restaurant.id === id);
+        const index = favorites.indexOf(toUnfav);
+        favorites.splice(index, 1);
+        console.log(favorites);
       }
     })
   }

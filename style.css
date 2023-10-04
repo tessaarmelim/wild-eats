@@ -14,17 +14,17 @@
 footer {
   background-color: rgba(106, 101, 101, 1);
   width: 100%;
-  margin-top: 1rem;
+  
 }
 
 .icon {
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
+  background-color:  rgba(106, 101, 101, 1);
 }
 
 .container {
   display: flex;
-  margin-top: 1rem;
   justify-content: space-around;
   align-items: center;
 }
@@ -33,20 +33,14 @@ footer {
   width: 80px;
   height: 45px;
   margin-left: 0.2rem;
+  background-color:  rgba(106, 101, 101, 1);
 }
 
 .download {
   color:  white;
   font-size: 20px;
-  text-align: center;
-}
-
-.wild-eats {
+  margin-left: 1rem;
   margin-top: 1rem;
-  margin-left: 1.5rem;
-  border: solid 2px white ;
-  width: 3rem;
-  color: var(--main-color);
 }
 
 .restaurants {
@@ -54,10 +48,9 @@ footer {
   align-items: center;
   flex-direction: column;
 }
-
+  
 h2, .restaurants {
   font-size: 2rem;
-
 }
 
 .filters-cards {
@@ -193,5 +186,6 @@ h2 {
 
 .faq {
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 

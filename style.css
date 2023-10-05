@@ -55,58 +55,69 @@ h2, .restaurants {
   width: 80vw;
   margin-top: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .filter-button {
-  padding: 1rem;
-  border: solid;
-  border-radius: .5rem;
+  padding: 0.8rem;
+  background-color: white;
+  cursor: pointer;
+  border: solid rgb(189, 186, 186) 0.1rem;
+  border-radius: 0.25rem;
 }
 
-.yellow-background {
-  background-color: yellow;
+.filter-button:hover {
+  background-color: var(--main-color);
+  color: white;
+  text-decoration: underline;
 }
 
-.restaurants-cards {
+.filter-button-clicked {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.restaurants-cards, .favorites-cards {
   width: 80vw;
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2.5rem 1rem;
 }
 
-.restaurant-card{
+.restaurant-card, .favorite-card {
   display: flex;
   flex-direction: column;
 }
 
-.restaurant-card-img img {
-  border-radius: 0.25rem;
+.restaurant-card-img img, .favorite-card-img img{
+  border-radius: 0.5rem;
 }
 
-.restaurant-card h3 {
+.restaurant-card h3 , .favorite-card h3 {
   font-size: 1.5rem;
   margin-left: 0.5rem;
 }
 
-.restaurant-card h4 {
+.restaurant-card h4, .favorite-card h4 {
   font-size: 1.3rem;
   margin-left: 0.5rem;
 }
 
-.restaurant-card-body {
+.restaurant-card-body, .favorite-card-body {
   display: grid;
   align-items: center;
+  justify-items: center;
   grid-template-columns: 9fr 1fr;
-  background-color: #EEF0EF;
+  /* background-color: #EEF0EF; */
   margin-top: 0.1rem;
   border-radius: 0.25rem;
 }
 
 .star {
-  background-color: #EEF0EF;
+  /* background-color: #EEF0EF; */
   display: flex;
 }
 
@@ -114,7 +125,6 @@ h2, .restaurants {
   position: sticky;
   top: 0px;
   background: var(--main-color);
-  /* height: 100px; */
 }
 
 h1 {

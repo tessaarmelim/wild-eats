@@ -31,7 +31,7 @@ const allRestaurants = [
     id: 4,
     name: "Aux Petits Oignons",
     picture: "pictures/restaurants/aux-petits-oignons-img.jpg",
-    foodCategory: "Francais",
+    foodCategory: "Français",
     favory: false
   },
   {
@@ -52,7 +52,7 @@ const allRestaurants = [
     id: 7,
     name: "Aux Ours",
     picture: "pictures/restaurants/aux-ours-img.jpg",
-    foodCategory: "Francais",
+    foodCategory: "Français",
     favory: false
   },
   {
@@ -94,7 +94,10 @@ const allRestaurants = [
 
 const restaurantsCards = document.querySelector(".restaurants-cards");
 
-const createRestaurantCard = ({name, picture, foodCategory, id}, cls) => {
+const createRestaurantCard = ({name, picture, foodCategory, id, favory}, cls) => {
+  const emptyStar = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="emptyStar_${cls}_${id}"><style>svg{fill:#ffff00}</style><path d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.6 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"/></svg>`;
+  const filledStar = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="filledStar_${cls}_${id}"><style>svg{fill:#ffff00}</style><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>`;
+  const starSVG = favory ? filledStar: emptyStar;
   return `
     <div class="${cls}-card">
       <div class="${cls}-card-head">
@@ -106,8 +109,8 @@ const createRestaurantCard = ({name, picture, foodCategory, id}, cls) => {
         <div class="${cls}-card-title">
           <h3>${name}</h3>
         </div>
-        <div class="star">
-          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" id="${cls}_${id}"><path d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.6 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"/></svg>
+        <div class="star ${cls}">
+          ${starSVG}
         </div>
         <div class="${cls}-card-food-category">
         <h4>${foodCategory}</h4>
@@ -119,15 +122,46 @@ const createRestaurantCard = ({name, picture, foodCategory, id}, cls) => {
 
 const selection = []; //Tableau contenant les filtres sélectionés
 
-const addRestaurantCard = (filteredRestaurants) => {
+const addRestaurantCard = (filteredRestaurants) => { //render
   restaurantsCards.innerHTML = ``;
   for (let i = 0; i < filteredRestaurants.length; i++) {
     const restaurantCard = document.createElement("div");
     restaurantCard.innerHTML = createRestaurantCard(filteredRestaurants[i], "restaurant");
     restaurantsCards.appendChild(restaurantCard);
   }
-  addStarClicker();
+  addStarClicker("restaurant");
 }
+
+const createFilterButton = (food) => {
+  return `
+  <button class="filter-button">${food}</button>
+  `
+}
+
+const filters = []; //Tableau des catégories de nourriture pour les filtres
+
+const addFilters = (restaurants) => {
+  for (let i = 0; i < restaurants.length; i++) {
+    if (!filters.includes(restaurants[i].foodCategory)) {
+      filters.push(restaurants[i].foodCategory);
+    }
+  }
+}
+
+addFilters(allRestaurants);
+console.log(filters);
+const filtersCards = document.querySelector(".filters-cards");
+
+const addFilterButton = (filters) => {
+  filtersCards.innerHTML = ``;
+  for (let i = 0; i < filters.length; i++) {
+    const filterButton = document.createElement("div");
+    filterButton.innerHTML = createFilterButton(filters[i]);
+    filtersCards.appendChild(filterButton);
+  }
+}
+
+addFilterButton(filters);
 
 const filterButtons = document.querySelectorAll(".filter-button");
 
@@ -143,43 +177,43 @@ const filterRestaurant = () => {
 
 const favoritesCards = document.querySelector(".favorites-cards");
 
-const addFavoritesCards = (favoritesRestaurants) => {
+const addFavoritesCards = () => {
   favoritesCards.innerHTML = ``;
-  for (let i = 0; i < favoritesRestaurants.length; i++) {
+  for (let i = 0; i < favorites.length; i++) {
     const favoriteCard = document.createElement("div");
-    favoriteCard.innerHTML = createRestaurantCard(favoritesRestaurants[i], "favorite");
+    favoriteCard.innerHTML = createRestaurantCard(favorites[i], "favorite");
     favoritesCards.appendChild(favoriteCard);
   }
-  addStarClicker();
+  addStarClicker("favorite");
 }
 
 const favorites = [];
 
-const addStarClicker = () => {
-  const stars = document.querySelectorAll(".star svg");
+const starClick = (star) => {
+  const id = parseInt(star.id.split("_").pop());
+  const restaurant = allRestaurants.find(restaurant => restaurant.id === id);
+  if (!favorites.some(fav => fav.id === id)) {
+    restaurant.favory = true;
+    favorites.push(restaurant);
+  } else {
+    restaurant.favory = false;
+    const toUnfav = favorites.find(restaurant => restaurant.id === id);
+    const index = favorites.indexOf(toUnfav);
+    favorites.splice(index, 1);
+  }
+  addFavoritesCards(favorites);
+  addRestaurantCard(allRestaurants);
+}
+
+const addStarClicker = (type) => {
+  const stars = document.querySelectorAll(`.star.${type} svg`);
   for (let i = 0; i < stars.length; i++) {
-    stars[i].addEventListener('click', () => {
-      const id = parseInt(stars[i].id.split("_").pop());
-      const restaurant = allRestaurants.find(restaurant => restaurant.id === id);
-      if (!favorites.some(fav => fav.id === id)) {
-        restaurant.favory = true;
-        favorites.push(restaurant);
-        addFavoritesCards(favorites);
-      } else {
-        restaurant.favory = false;
-        const toUnfav = favorites.find(restaurant => restaurant.id === id);
-        const index = favorites.indexOf(toUnfav);
-        favorites.splice(index, 1);
-        addFavoritesCards(favorites);
-      }
-    })
+    stars[i].removeEventListener('click', () => starClick(stars[i]));
+    stars[i].addEventListener('click', () => starClick(stars[i]));
   }
 }
 
-//addFavoritesCards(favorites);
-
 const filter = () => {
-  addStarClicker();
   for (let i = 0; i < filterButtons.length; i++) {
     filterButtons[i].addEventListener("click", function () {
       if (selection.includes(filterButtons[i].textContent)) { //si le filtre est cliqué on le retire
@@ -190,11 +224,11 @@ const filter = () => {
       } else { //si il n'y est pas on l'ajoute
         selection.push(filterButtons[i].textContent);
       }
-      filterButtons[i].classList.toggle("yellow-background");
+      filterButtons[i].classList.toggle("filter-button-clicked");
       filterRestaurant();
     });
-    filterRestaurant();
   }
+  filterRestaurant();
 }
 
 filter();

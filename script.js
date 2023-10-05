@@ -1,3 +1,63 @@
+const faqData = [
+  {
+    question: "Comment réserver une table dans un restaurant ?",
+    answer: "Appelez directement le restaurant et demandez s'ils acceptent les réservations par téléphone."
+  },
+  {
+    question: "Quels sont les modes de réglements acceptés ?",
+    answer: "Les modes de paiement acceptés varient d'un restaurant à l'autre, mais les options courantes incluent, Espèces, Cartes de crédit et de débit (Visa, MasterCard, American Express), Paiements mobiles (Apple Pay, Google Pay), Chèques-cadeaux ou cartes-cadeaux spécifiques au restaurant."
+  },
+  {
+    question: "comment trouver un restaurant proposant la livraison ?",
+    answer: "Utiliser des applications de livraison de repas, comme Uber Eats, DoorDash, ou Grubhub."
+  },
+  {
+    question: "Ou puis je trouver les horaires d'un restaurant ?",
+    answer: "Les horaires d'un restaurant sont généralement disponibles sur : Le site web officiel du restaurant, Les applications de réservation de restaurants, Les moteurs de recherche en ligne, tels que Google, qui affichent souvent les horaires d'ouverture."
+  },
+  {
+    question: "Ou puis je trouver les informations qui concernent les allergènes ?",
+    answer: "Sur le menu du restaurant lui-même, où les allergènes courants sont souvent indiqués à côté des plats."
+  }
+];
+
+const createQA = ({question, answer}) => {
+  return `
+  <div class="qa-container">
+    <details>
+      <summary>
+        <div class="question-container">
+          <div class="icon-faq">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+          </div>
+          <p class="question">${question}</p>
+        </div>
+      </summary>
+      <p class="reponse">${answer}</p>
+    </details>
+  </div>
+  ` 
+}
+
+// details.addEventListener("toggle", (event) => {
+//   if (details.open) {
+//     /* the element was toggled open */
+//   } else {
+//     /* the element was toggled closed */
+//   }
+// });
+
+const faqContainer = document.querySelector('.faq-container');
+const addQa = (faq) => {
+  faqContainer.innerHTML = ``;
+  for (let i = 0; i < faq.length; i++) {
+    const faqDiv = document.createElement('div');
+    faqDiv.innerHTML = createQA(faq[i]);
+    faqContainer.appendChild(faqDiv);
+  }
+}
+addQa(faqData);
+
 const allRestaurants = [
   /* {
     id: 1,
@@ -192,3 +252,6 @@ const filter = () => {
 }
 
 filter();
+
+
+

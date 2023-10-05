@@ -8,13 +8,11 @@
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
- 
 } 
 
 footer {
   background-color: rgba(106, 101, 101, 1);
   width: 100%;
-  
 }
 
 .icon {
@@ -43,7 +41,7 @@ footer {
   margin-top: 1rem;
 }
 
-.restaurants {
+.restaurants, .favorites {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -76,48 +74,40 @@ h2, .restaurants {
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  
+  grid-gap: 2.5rem 1rem;
 }
 
-.restaurant-card {
-  width: 100%;
+.restaurant-card{
   display: flex;
   flex-direction: column;
-  border: solid;
 }
 
-.restaurant-card-head {
-  background-size: cover;
-  background-position: center;
+.restaurant-card-img img {
+  border-radius: 0.25rem;
 }
 
-.restaurant-card-img {
-  background-size: cover;
-  background-position: center;
-  height: 10rem;
-  /* width: 10rem; */
-  width: 100%;
+.restaurant-card h3 {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.restaurant-card h4 {
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
 }
 
 .restaurant-card-body {
   display: grid;
+  align-items: center;
   grid-template-columns: 9fr 1fr;
-  margin-top: 0.5rem;
-}
-
-.restaurant-card-title {
-  font-size: 1.5rem;
-  color:black;
+  background-color: #EEF0EF;
+  margin-top: 0.1rem;
+  border-radius: 0.25rem;
 }
 
 .star {
-  border: none;
-  background-color: white;
-}
-
-.restaurant-card-food-category {
-  color: black;
+  background-color: #EEF0EF;
+  display: flex;
 }
 
 .navbar {
@@ -141,7 +131,6 @@ h1 {
 
 h2, .navbar {
   text-align: center;
-
 }
 
 .menu {

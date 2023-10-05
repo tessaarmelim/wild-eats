@@ -179,10 +179,14 @@ const favoritesCards = document.querySelector(".favorites-cards");
 
 const addFavoritesCards = () => {
   favoritesCards.innerHTML = ``;
-  for (let i = 0; i < favorites.length; i++) {
-    const favoriteCard = document.createElement("div");
-    favoriteCard.innerHTML = createRestaurantCard(favorites[i], "favorite");
-    favoritesCards.appendChild(favoriteCard);
+  if(favorites.length === 0) {
+    favoritesCards.innerHTML = "Vous n'avez pas encore de favoris";
+  } else {
+    for (let i = 0; i < favorites.length; i++) {
+      const favoriteCard = document.createElement("div");
+      favoriteCard.innerHTML = createRestaurantCard(favorites[i], "favorite");
+      favoritesCards.appendChild(favoriteCard);
+    }
   }
   addStarClicker("favorite");
 }

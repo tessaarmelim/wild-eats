@@ -21,11 +21,8 @@ const faqData = [
   }
 ];
 
-
 const createQA = ({question, answer}) => {
-  return 
-  
-  `
+  return `
   <div class="qa-container">
     <details>
       <summary>
@@ -42,12 +39,16 @@ const createQA = ({question, answer}) => {
   ` 
 }
 
+const faqContainer = document.querySelector('.faq-container');
 const addQa = (faq) => {
+  faqContainer.innerHTML = ``;
   for (let i = 0; i < faq.length; i++) {
-    createQA(faq[i])
+    const faqDiv = document.createElement('div');
+    faqDiv.innerHTML = createQA(faq[i]);
+    faqContainer.appendChild(faqDiv);
   }
 }
-
+addQa(faqData);
 
 const allRestaurants = [
   /* {

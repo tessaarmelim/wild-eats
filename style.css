@@ -181,7 +181,6 @@ h2 {
 .faq-container {
   margin-top: 1rem;
   height: auto;
-  
 }
 
 .title-faq {
@@ -189,17 +188,17 @@ h2 {
 }
 
 .qa-container {
-  width: 90%;
+  width: 95%;
   margin: auto;
-  border: solid 1px black;
-  border-radius: 5px;
-  
+  margin-top: 1rem; 
 }
 
 .question-container {
   display: flex;
-  background-color: lightgray;
+  background-color: rgb(228, 228, 228);
   align-items: center;
+  border-radius: 3px;
+  height: 50px;
 }
 
 .icon-faq {
@@ -213,6 +212,17 @@ h2 {
 
 .reponse {
   margin-left: 34px;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+p.reponse {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px  rgb(228, 228, 228);
 }
 
 

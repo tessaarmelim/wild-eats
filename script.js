@@ -1,23 +1,23 @@
 const faqData = [
   {
-    question: "blabla",
-    answer: "blablabla"
+    question: "Comment réserver une table dans un restaurant ?",
+    answer: "Appelez directement le restaurant et demandez s'ils acceptent les réservations par téléphone."
   },
   {
-    question: "blabla",
-    answer: "blablabla"
+    question: "Quels sont les modes de réglements acceptés ?",
+    answer: "Les modes de paiement acceptés varient d'un restaurant à l'autre, mais les options courantes incluent, Espèces, Cartes de crédit et de débit (Visa, MasterCard, American Express), Paiements mobiles (Apple Pay, Google Pay), Chèques-cadeaux ou cartes-cadeaux spécifiques au restaurant."
   },
   {
-    question: "blabla",
-    answer: "blablabla"
+    question: "comment trouver un restaurant proposant la livraison ?",
+    answer: "Utiliser des applications de livraison de repas, comme Uber Eats, DoorDash, ou Grubhub."
   },
   {
-    question: "blabla",
-    answer: "blablabla"
+    question: "Ou puis je trouver les horaires d'un restaurant ?",
+    answer: "Les horaires d'un restaurant sont généralement disponibles sur : Le site web officiel du restaurant, Les applications de réservation de restaurants, Les moteurs de recherche en ligne, tels que Google, qui affichent souvent les horaires d'ouverture."
   },
   {
-    question: "blabla",
-    answer: "blablabla"
+    question: "Ou puis je trouver les informations qui concernent les allergènes ?",
+    answer: "Sur le menu du restaurant lui-même, où les allergènes courants sont souvent indiqués à côté des plats."
   }
 ];
 
@@ -38,6 +38,14 @@ const createQA = ({question, answer}) => {
   </div>
   ` 
 }
+
+// details.addEventListener("toggle", (event) => {
+//   if (details.open) {
+//     /* the element was toggled open */
+//   } else {
+//     /* the element was toggled closed */
+//   }
+// });
 
 const faqContainer = document.querySelector('.faq-container');
 const addQa = (faq) => {

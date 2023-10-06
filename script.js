@@ -39,14 +39,6 @@ const createQA = ({question, answer}) => {
   ` 
 }
 
-// details.addEventListener("toggle", (event) => {
-//   if (details.open) {
-//     /* the element was toggled open */
-//   } else {
-//     /* the element was toggled closed */
-//   }
-// });
-
 const faqContainer = document.querySelector('.faq-container');
 const addQa = (faq) => {
   faqContainer.innerHTML = ``;
@@ -59,13 +51,6 @@ const addQa = (faq) => {
 addQa(faqData);
 
 const allRestaurants = [
-  /* {
-    id: 1,
-   name: "",
-   picture: "",
-   foodCategory: ""
-   favory: Boolean
-  } */
   {
     id: 1,
     name: "Brunchy Café Paris",
@@ -209,7 +194,7 @@ const addFilters = (restaurants) => {
 }
 
 addFilters(allRestaurants);
-console.log(filters);
+
 const filtersCards = document.querySelector(".filters-cards");
 
 const addFilterButton = (filters) => {
@@ -296,6 +281,3 @@ const filter = () => {
 }
 
 filter();
-
-
-

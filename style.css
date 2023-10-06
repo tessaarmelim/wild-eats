@@ -182,17 +182,17 @@ h2 {
 
 .about {
   margin-top: 1rem;
+  width: 95%;
+  margin: auto;
 }
 
-.faq p {
+.faq-container {
   margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  height: auto;
 }
 
-.faq {
+.title-faq {
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .border-line {
@@ -200,4 +200,42 @@ h2 {
     height: 0.05rem;
     background-color: #000;
     margin: 2.5rem auto;
+}
+
+.qa-container {
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem; 
+}
+
+.question-container {
+  display: flex;
+  background-color: rgb(228, 228, 228);
+  align-items: center;
+  border-radius: 3px;
+  height: 50px;
+}
+
+.icon-faq {
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.question {
+  margin-left: 10px;
+}
+
+.reponse {
+  margin-left: 34px;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+p.reponse {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px  rgb(228, 228, 228);
 }

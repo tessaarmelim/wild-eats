@@ -41,7 +41,8 @@ footer {
   margin-top: 1rem;
 }
 
-.restaurants {
+.restaurants, .favorites {
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -55,73 +56,82 @@ h2, .restaurants {
   width: 80vw;
   margin-top: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .filter-button {
-  padding: 1rem;
-  border: solid;
-  border-radius: .5rem;
+  padding: 0.8rem;
+  background-color: white;
+  cursor: pointer;
+  border: solid rgb(189, 186, 186) 0.1rem;
+  border-radius: 0.25rem;
 }
 
-.yellow-background {
-  background-color: yellow;
+.filter-button:hover {
+  background-color: var(--main-color);
+  color: white;
+  text-decoration: underline;
 }
 
-.restaurants-cards {
+.filter-button-clicked {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.restaurants-cards, .favorites-cards {
   width: 80vw;
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.5rem 1rem;
 }
 
-.restaurant-card {
-  width: 100%;
+.restaurant-card, .favorite-card {
   display: flex;
   flex-direction: column;
-  border: solid;
 }
 
-.restaurant-card-head {
-  background-size: cover;
-  background-position: center;
+    /* margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; */
+
+.restaurant-card-img img, .favorite-card-img img{
+  border-radius: 0.5rem;
 }
 
-.restaurant-card-img {
-  background-size: cover;
-  background-position: center;
-  height: 10rem;
-  /* width: 10rem; */
-  width: 100%;
-}
-
-.restaurant-card-body {
-  display: grid;
-  grid-template-columns: 9fr 1fr;
-  margin-top: 0.5rem;
-}
-
-.restaurant-card-title {
+.restaurant-card h3 , .favorite-card h3 {
   font-size: 1.5rem;
-  color:black;
+  margin-left: 0.5rem;
+}
+
+.restaurant-card h4, .favorite-card h4 {
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+}
+
+.restaurant-card-body, .favorite-card-body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 9fr 1fr;
+  /* background-color: #EEF0EF; */
+  margin-top: 0.1rem;
+  border-radius: 0.25rem;
 }
 
 .star {
-  border: none;
-  background-color: white;
-}
-
-.restaurant-card-food-category {
-  color: black;
+  /* background-color: #EEF0EF; */
+  display: flex;
 }
 
 .navbar {
   position: sticky;
   top: 0px;
   background: var(--main-color);
-  /* height: 100px; */
 }
 
 h1 {
@@ -185,6 +195,13 @@ h2 {
   margin-top: 1rem;
 }
 
+.border-line {
+    width: 50vw;
+    height: 0.05rem;
+    background-color: #000;
+    margin: 2.5rem auto;
+}
+
 .qa-container {
   width: 95%;
   margin: auto;
@@ -222,6 +239,3 @@ p.reponse {
   align-items: center;
   border-bottom: solid 1px  rgb(228, 228, 228);
 }
-
-
-

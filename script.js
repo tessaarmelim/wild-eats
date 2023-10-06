@@ -8,7 +8,7 @@ const faqData = [
     answer: "Les modes de paiement acceptés varient d'un restaurant à l'autre, mais les options courantes incluent, Espèces, Cartes de crédit et de débit (Visa, MasterCard, American Express), Paiements mobiles (Apple Pay, Google Pay), Chèques-cadeaux ou cartes-cadeaux spécifiques au restaurant."
   },
   {
-    question: "comment trouver un restaurant proposant la livraison ?",
+    question: "Comment trouver un restaurant proposant la livraison ?",
     answer: "Utiliser des applications de livraison de repas, comme Uber Eats, DoorDash, ou Grubhub."
   },
   {
@@ -26,12 +26,10 @@ const createQA = ({question, answer}) => {
   <div class="qa-container">
     <details>
       <summary>
-        <div class="question-container">
-          <div class="icon-faq">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-          </div>
-          <p class="question">${question}</p>
+        <div class="icon-faq">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
         </div>
+        <p class="question">${question}</p>
       </summary>
       <p class="reponse">${answer}</p>
     </details>

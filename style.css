@@ -11,7 +11,7 @@
 } 
 
 .body {
-  width: max-content;
+  width: 100%;
 }
 
 .border-line {
@@ -164,7 +164,6 @@ h2, .restaurants {
   }
 }
 
-
 .restaurant-card, .favorite-card {
   display: flex;
   flex-direction: column;
@@ -198,6 +197,24 @@ h2, .restaurants {
 }
 /* ----------- */
 
+.map {
+  width: 80%;
+  margin: auto;
+  height: 40vh;
+  background-image: url("pictures/map-global.PNG");
+  background-size: cover;
+}
+
+@media screen and (max-width: 420px) {
+  .map {
+    width: 80%;
+    margin: auto;
+    height: 20vh;
+    background-image: url("pictures/map-global.PNG");
+    background-size: cover;
+  }
+}
+
 /* about */
 .about p {
   margin-top: 1rem;
@@ -228,7 +245,7 @@ h2, .restaurants {
   margin-top: 1rem; 
 }
 
-.question-container {
+.faq .faq-container .qa-container details summary {
   display: flex;
   background-color: rgb(228, 228, 228);
   align-items: center;

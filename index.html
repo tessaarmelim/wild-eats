@@ -8,19 +8,37 @@
 </head>
 
 <body>
-   <nav class="navbar">
-    <h1>WILD EATS</h1>
+  <nav class="navbar">
+    <h1><a href="#wild-eats">WILD EATS</a></h1>
     <h2>BIENVENUE</h2>
-    <div class="menu">
-      <ul>
-        <li><a >vos favoris</a></li>
-        <li><a href="#restaurants">restaurants</a></li>
-        <li><a href="#about">a propos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-    <img src="pictures\header.png">
-  </nav>
+    <details>
+      <summary>
+        <p>BOUTON</p>
+      </summary>
+      <div class="menu">
+        <ul>
+          <li><a >vos favoris</a></li>
+          <li><a href="#restaurants">restaurants</a></li>
+          <li><a href="#about">a propos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul> 
+      </div>
+    </details>
+      <!-- <details>
+       <div class="menu">
+        <summary>
+          <ul>
+            <li><a >vos favoris</a></li>
+            <li><a href="#restaurants">restaurants</a></li>
+            <li><a href="#about">a propos</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </summary>
+       </div>
+      </details>  -->
+    </nav>
+  <img src="pictures\header.png" >
+  
   
   <section class="restaurants" id="restaurants">
     <h2>Les restaurants </h2>
@@ -69,6 +87,5 @@
   </footer>
   
   <script src="script.js"></script>
-  
 </body>
 </html>

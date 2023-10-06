@@ -42,16 +42,16 @@ footer {
   margin-left: 1.5rem;
   border: solid 2px white ;
   width: 3rem;
- 
   color: rgba(142, 175, 87, 0.58);
 }
+
+
 .restaurants {
   
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 400px;
-}
+  }
 
 h2, .restaurants {
   font-size: 2rem;
@@ -126,11 +126,14 @@ h2, .restaurants {
 }
 
 .navbar {
-  background: #BDD09D;
+  position: sticky;
+  top: 0px;
   height: 100px;
+  background: #c4d7a2;
 }
 
-h1 {
+
+h1{
   padding-left: 12px;
   padding-right: 474px;
   padding-top: 22px;
@@ -140,17 +143,22 @@ h1 {
   flex-shrink: 0;
   font-style: normal;
   font-family:Impact, fantasy;
+ 
+}
+
+h1, a {
+  text-decoration: none;
+  color: rgb(24, 23, 23); 
 }
 
 h2, .navbar {
   text-align: center;
-
-}
+ }
 
 .menu {
   background: #c4d7a2;
-  height: 143px;
   text-align: end;
+  
 }
 
 li {
@@ -158,8 +166,6 @@ li {
 }
 
 img {
-  display: inline;
-  opacity: 0.8;
   background: #FFFDFD;
   text-align: center;
   width: 100%;
@@ -190,5 +196,9 @@ h2 {
 
 .faq {
   margin-top: 1rem;
+}
+
+details {
+  text-align: end;
 }
 
